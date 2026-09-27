@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulir Pemesanan Meja - Remen Ramen Sragen</title>
+</head>
+
+<body>
+
+    <!-- ================= HEADER: Identitas Kedai ================= -->
+    <header>
+        <h1>Remen Ramen</h1>
+        <p><em>Ramen yang bikin Remen</em></p>
+    </header>
+
+    <!-- ================= NAV: Navigasi Antar Halaman ================= -->
+    <nav aria-label="Navigasi Utama">
+        <ul>
+            <li><a href="index.html">&larr; Kembali ke Katalog Menu</a></li>
+            <li><a href="pesan.html"><strong>Formulir Pemesanan Meja</strong></a></li>
+        </ul>
+    </nav>
+
+    <hr>
+
+    <!-- ================= MAIN: Konten Formulir Pemesanan ================= -->
+    <main>
+
+        <section id="area-pemesanan">
+            <h2>Formulir Pemesanan Makanan & Minuman</h2>
+            <p>
+                Silakan isi data nomor meja dan menu yang Anda inginkan di bawah ini.
+                Pesanan akan langsung terkirim ke layar kasir dan dapur kami!
+            </p>
+
+            <!-- FORMULIR UTAMA -->
+            <form action="admin.html" method="get">
+
+                <!-- Bagian 1: Identitas Pemesan & Nomor Meja -->
+                <fieldset>
+                    <legend><strong>1. Informasi Meja & Pemesan</strong></legend>
+
+                    <p>
+                        <label for="nama_pemesan">Nama Pemesan:</label><br>
+                        <input type="text" id="nama_pemesan" name="nama_pemesan" placeholder="Contoh: Budi Santoso"
+                            required size="40">
+                    </p>
+
+                    <p>
+                        <label for="nomor_meja">Nomor Meja Anda:</label><br>
+                        <input type="number" id="nomor_meja" name="nomor_meja" min="1" max="25" placeholder="Contoh: 04"
+                            required>
+                        <small>(Lihat stiker nomor yang tertempel di atas meja)</small>
+                    </p>
+                </fieldset>
+
+                <br>
+
+                <!-- Bagian 2: Pilihan Menu Ramen Utama -->
+                <fieldset>
+                    <legend><strong>2. Pilihan Menu Ramen (Rp 15.000)</strong></legend>
+
+                    <p>
+                        <label for="menu_ramen">Pilih Varian Ramen:</label><br>
+                        <select id="menu_ramen" name="menu_ramen" required>
+                            <option value="">-- Silakan Pilih Ramen --</option>
+                            <option value="tantan">Tantan Ramen (Kuah Creamy Pedas Gurih) - Rp 15.000</option>
+                            <option value="shoyu">Shoyu Ramen (Kuah Kaldu Ayam Bening Gurih) - Rp 15.000</option>
+                            <option value="abura">Abura Soba (Ramen Kering Gurih) - Rp 15.000</option>
+                        </select>
+                    </p>
+
+                    <p>
+                        <label for="jumlah_porsi">Jumlah Porsi:</label><br>
+                        <input type="number" id="jumlah_porsi" name="jumlah_porsi" min="1" max="10" value="1" required>
+                    </p>
+
+                    <!-- Pilihan Tingkat Kepedasan (Radio Button) -->
+                    <p><strong>Tingkat Kepedasan:</strong></p>
+                    <p>
+                        <input type="radio" id="pedas_lvl0" name="level_pedas" value="0">
+                        <label for="pedas_lvl0">Level 0 </label><br>
+
+                        <input type="radio" id="pedas_lvl1" name="level_pedas" value="1" checked>
+                        <label for="pedas_lvl1">Level 1 </label><br>
+
+                        <input type="radio" id="pedas_lvl2" name="level_pedas" value="2">
+                        <label for="pedas_lvl2">Level 2 (Favorit)</label><br>
+
+                        <input type="radio" id="pedas_lvl3" name="level_pedas" value="3">
+                        <label for="pedas_lvl3">Level 3 </label>
+                    </p>
+
+                </fieldset>
+
+                <br>
+
+                <!-- Bagian 3: Tambahan Snack Pendamping (Checkbox) -->
+                <fieldset>
+                    <legend><strong>3. Tambahan Snack Pendamping (+Rp 7.000 / porsi)</strong></legend>
+                    <p><em>Pilih camilan renyah untuk melengkapi mangkuk ramen Anda:</em></p>
+                    <p>
+                        <input type="checkbox" id="snack_katsu" name="snack[]" value="katsu">
+                        <label for="snack_katsu">Chicken Katsu Renyah (+Rp 7.000)</label><br>
+
+                        <input type="checkbox" id="snack_karage" name="snack[]" value="karage">
+                        <label for="snack_karage">Chicken Karage Gurih (+Rp 7.000)</label>
+                    </p>
+                </fieldset>
+
+                <br>
+
+                <!-- Bagian 4: Pilihan Minuman Segar -->
+                <fieldset>
+                    <legend><strong>4. Pilihan Minuman Segar</strong></legend>
+                    <p>
+                        <label for="pilihan_minuman">Jenis Minuman:</label><br>
+                        <select id="pilihan_minuman" name="pilihan_minuman">
+                            <option value="none">-- Tanpa Minuman --</option>
+                            <option value="tea">Tea (Es / Hangat) - Rp 3.000</option>
+                            <option value="lychee">Lychee Tea (Es / Hangat) - Rp 4.000</option>
+                            <option value="lemon">Lemon Tea (Es / Hangat) - Rp 5.000</option>
+                            <option value="jeruk">Jeruk (Es / Hangat) - Rp 5.000</option>
+                            <option value="matcha">Matcha (Es / Hangat) - Rp 5.000</option>
+                        </select>
+                    </p>
+
+                    <p><strong>Penyajian Minuman:</strong></p>
+                    <p>
+                        <input type="radio" id="minum_es" name="suhu_minuman" value="ice" checked>
+                        <label for="minum_es">Dingin (Pakai Es Batu Segar)</label><br>
+
+                        <input type="radio" id="minum_hangat" name="suhu_minuman" value="hot">
+                        <label for="minum_hangat">Hangat (Tanpa Es)</label>
+                    </p>
+                </fieldset>
+
+                <br>
+
+                <!-- Bagian 5: Catatan Khusus & Pembayaran -->
+                <fieldset>
+                    <legend><strong>5. Catatan Koki &amp; Metode Pembayaran</strong></legend>
+
+                    <p>
+                        <label for="catatan_koki">Catatan Khusus untuk Dapur:</label><br>
+                        <textarea id="catatan_koki" name="catatan_koki" rows="3" cols="50"
+                            placeholder="Misal: Kuah dipisah, daun bawang dibanyakin, atau jangan pakai wijen karena alergi..."></textarea>
+                    </p>
+
+                    <p>
+                        <label for="metode_pembayaran">Pilihan Cara Pembayaran:</label><br>
+                        <select id="metode_pembayaran" name="metode_pembayaran" required>
+                            <option value="tunai">Bayar Tunai / Cash di Kasir</option>
+                            <option value="qris">Bayar Non-Tunai (QRIS / E-Wallet di Kasir)</option>
+                        </select>
+                    </p>
+                </fieldset>
+
+                <br>
+
+                <!-- Tombol Aksi Form -->
+                <p>
+                    <button type="submit"><strong>&raquo; Kirim Pesanan ke Kasir &amp; Dapur &laquo;</strong></button>
+                    <button type="reset">Bersihkan Formulir</button>
+                </p>
+
+            </form>
+        </section>
+
+    </main>
+
+    <hr>
+
+    <!-- ================= FOOTER ================= -->
+    <footer>
+        <p>Alamat: Jl. Raya Sragen, Kabupaten Sragen, Jawa Tengah</p>
+        <p>Instagram: @remenramenn</p>
+        <p><small><a href="admin.html">&rarr; Masuk ke Layar Kasir / Dapur (Khusus Staf)</a></small></p>
+    </footer>
+
+</body>
+
+</html>

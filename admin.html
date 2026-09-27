@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard Kasir & Dapur - Remen Ramen Sragen</title>
+</head>
+<body>
+
+  <!-- ================= HEADER: Panel Kontrol Staf ================= -->
+  <header>
+    <h1>Remen Ramen - Panel Kontrol Kasir &amp; Dapur</h1>
+    <p><em>Sistem Manajemen Pesanan &amp; Ketersediaan Menu Kedai</em></p>
+    <p>
+      <strong>Staf Bertugas:</strong> Kasir 01 (Shift Siang) | 
+      <strong>Status Kedai:</strong> <mark>Buka &amp; Menerima Pesanan</mark>
+    </p>
+  </header>
+
+  <!-- ================= NAV: Navigasi Internal Staf ================= -->
+  <nav aria-label="Navigasi Panel Admin">
+    <ul>
+      <li><a href="#antrean-pesanan"><strong>Tabel Pesanan Masuk (Live)</strong></a></li>
+      <li><a href="#kontrol-stok"><strong>Kontrol Stok Menu</strong></a></li>
+      <li><a href="index.html">&larr; Keluar ke Mode Pelanggan (Beranda)</a></li>
+    </ul>
+  </nav>
+
+  <hr>
+
+  <!-- ================= MAIN: Konten Operasional Kedai ================= -->
+  <main>
+
+    <!-- Section 1: Ringkasan Metrik Hari Ini -->
+    <section id="ringkasan-operasional">
+      <h2>Ringkasan Operasional Hari Ini</h2>
+      <ul>
+        <li><strong>Total Pesanan Masuk:</strong> 12 Meja</li>
+        <li><strong>Pesanan Sedang Dimasak:</strong> 3 Meja</li>
+        <li><strong>Menu Habis (Sold Out):</strong> 1 Menu (Shoyu Ramen)</li>
+      </ul>
+    </section>
+
+    <hr>
+
+    <!-- Section 2: Tabel Antrean Pesanan Meja (Live Kitchen Orders) -->
+    <section id="antrean-pesanan">
+      <h2>1. Antrean Pesanan Meja (Live Kitchen &amp; Cashier)</h2>
+      <p>Berikut adalah pesanan yang masuk dari pelanggan melalui QR meja atau kasir:</p>
+
+      <table border="1" cellpadding="8" cellspacing="0">
+        <caption><em>Tabel 1: Daftar Antrean Pesanan Aktif Pelanggan</em></caption>
+        <thead>
+          <tr>
+            <th>No. Antrean</th>
+            <th>No. Meja</th>
+            <th>Nama Pemesan</th>
+            <th>Rincian Menu &amp; Porsi</th>
+            <th>Level Pedas &amp; Catatan Dapur</th>
+            <th>Total Tagihan</th>
+            <th>Metode Bayar</th>
+            <th>Status Pesanan</th>
+            <th>Aksi Kasir</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Baris Pesanan 1 -->
+          <tr>
+            <td><strong>#001</strong></td>
+            <td>Meja 04</td>
+            <td>Budi Santoso</td>
+            <td>
+              - 1x Tantan Ramen (Rp 15.000)<br>
+              - 1x Chicken Katsu (+Rp 7.000)<br>
+              - 1x Es Teh Manis (+Rp 3.000)
+            </td>
+            <td>Level 2 (Mie Lurus). <em>Catatan: Daun bawang dibanyakin</em></td>
+            <td>Rp 25.000</td>
+            <td>Tunai (Cash)</td>
+            <td><mark>Sedang Dimasak</mark></td>
+            <td>
+              <button type="button">Tandai Selesai</button>
+              <button type="button">Batalkan</button>
+            </td>
+          </tr>
+
+          <!-- Baris Pesanan 2 -->
+          <tr>
+            <td><strong>#002</strong></td>
+            <td>Meja 02</td>
+            <td>Siti Rahma</td>
+            <td>
+              - 2x Abura Soba (Rp 30.000)<br>
+              - 2x Matcha Ice (+Rp 10.000)
+            </td>
+            <td>Level 3 &amp; Level 1. <em>Catatan: Kuah dipisah</em></td>
+            <td>Rp 40.000</td>
+            <td>QRIS (Lunas)</td>
+            <td><mark>Menunggu Diantar</mark></td>
+            <td>
+              <button type="button">Tandai Selesai</button>
+              <button type="button">Batalkan</button>
+            </td>
+          </tr>
+
+          <!-- Baris Pesanan 3 -->
+          <tr>
+            <td><strong>#003</strong></td>
+            <td>Meja 07</td>
+            <td>Mas Agus</td>
+            <td>
+              - 1x Tantan Ramen (Rp 15.000)<br>
+              - 1x Lemon Tea Hangat (+Rp 5.000)
+            </td>
+            <td>Level 0 (Tanpa Pedas)</td>
+            <td>Rp 20.000</td>
+            <td>Tunai (Belum Bayar)</td>
+            <td><em>Menunggu Pembayaran</em></td>
+            <td>
+              <button type="button">Konfirmasi Bayar</button>
+              <button type="button">Batalkan</button>
+            </td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td colspan="9">
+              <em>* Kasir harap mengecek bukti transfer QRIS sebelum menekan tombol "Tandai Selesai".</em>
+            </td>
+          </tr>
+        </tfoot>
+      </table>
+    </section>
+
+    <hr>
+
+    <!-- Section 3: Tabel Kontrol Stok & Ketersediaan Bahan Harian -->
+    <section id="kontrol-stok">
+      <h2>2. Kontrol Ketersediaan Menu &amp; Stok Hari Ini</h2>
+      <p>Perbarui status menu jika bahan kaldu atau topping di dapur sudah habis:</p>
+
+      <table border="1" cellpadding="8" cellspacing="0">
+        <caption><em>Tabel 2: Status Ketersediaan Menu Remen Ramen</em></caption>
+        <thead>
+          <tr>
+            <th>Kode</th>
+            <th>Nama Menu</th>
+            <th>Kategori</th>
+            <th>Harga Jual</th>
+            <th>Status Ketersediaan</th>
+            <th>Ubah Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>RMN-01</td>
+            <td>Tantan Ramen</td>
+            <td>Ramen Kuah</td>
+            <td>Rp 15.000</td>
+            <td><strong>TERSEDIA</strong></td>
+            <td><button type="button">Ubah ke Habis</button></td>
+          </tr>
+          <tr>
+            <td>RMN-02</td>
+            <td>Shoyu Ramen</td>
+            <td>Ramen Kuah</td>
+            <td>Rp 15.000</td>
+            <td><mark>HABIS (Sold Out)</mark></td>
+            <td><button type="button">Aktifkan Kembali</button></td>
+          </tr>
+          <tr>
+            <td>RMN-03</td>
+            <td>Abura Soba</td>
+            <td>Dry Ramen</td>
+            <td>Rp 15.000</td>
+            <td><strong>TERSEDIA</strong></td>
+            <td><button type="button">Ubah ke Habis</button></td>
+          </tr>
+          <tr>
+            <td>SNK-01</td>
+            <td>Chicken Katsu</td>
+            <td>Snack</td>
+            <td>Rp 7.000</td>
+            <td><strong>TERSEDIA</strong></td>
+            <td><button type="button">Ubah ke Habis</button></td>
+          </tr>
+          <tr>
+            <td>SNK-02</td>
+            <td>Chicken Karage</td>
+            <td>Snack</td>
+            <td>Rp 7.000</td>
+            <td><strong>TERSEDIA</strong></td>
+            <td><button type="button">Ubah ke Habis</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <hr>
+
+    <!-- Section 4: Catatan Operasional Shift Kasir (Form Internal) -->
+    <section id="memo-kasir">
+      <h2>3. Buku Catatan Shift Kasir</h2>
+      <form action="#" method="post">
+        <p>
+          <label for="catatan_shift">Catatan Pergantian Shift / Kendala Dapur:</label><br>
+          <textarea id="catatan_shift" name="catatan_shift" rows="3" cols="60" placeholder="Contoh: Stok telur ajitsuke tamago sisa 5 butir untuk shift malam..."></textarea>
+        </p>
+        <p>
+          <button type="submit">Simpan Catatan Shift</button>
+        </p>
+      </form>
+    </section>
+
+  </main>
+
+  <hr>
+
+  <!-- ================= FOOTER ================= -->
+  <footer>
+    <p>Panel Sistem Kasir &amp; Dapur &mdash; Kedai Remen Ramen Sragen v1.0 (HTML5)</p>
+    <p><small><a href="index.html">&larr; Kembali ke Layar Pemesanan Pelanggan</a></small></p>
+  </footer>
+
+</body>
+</html>
