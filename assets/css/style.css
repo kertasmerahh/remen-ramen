@@ -1,0 +1,394 @@
+@import url('https://fonts.googleapis.com/css2?family=Lilita+One&family=Quicksand:wght@400;600;700&display=swap');
+
+:root {
+  --merah: #AE1313;
+  --merah-tua: #7F0D0D;
+  --krem: #F7E3D4;
+  --pasir: #EDD5A3;
+  --cokelat: #5A3716;
+  --oranye: #FDAA3F;
+}
+
+/* =========================================
+   GLOBAL STYLES
+   ========================================= */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--krem);
+  color: var(--cokelat);
+  font-family: 'Quicksand', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Lilita One', cursive;
+  color: var(--merah-tua);
+  font-weight: normal;
+  text-align: center;
+}
+
+table strong, table b, table em, table mark {
+  color: var(--oranye);
+}
+
+
+a {
+  color: var(--merah);  
+  text-decoration: none;
+  font-weight: 700;
+  transition: color 0.3s;
+}
+
+a:hover {
+  color: var(--oranye);
+}
+
+hr {
+  border: 0;
+  height: 2px;
+  background-color: var(--merah-tua);
+  margin: 2rem 0;
+}
+
+main {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+strong, b, em, mark {
+  color: var(--merah-tua);
+}
+
+mark {
+  background-color: transparent;
+}
+
+table button {
+  padding: 0.4rem 0.8rem;
+  font-size: 0.9rem;
+  border-radius: 6px;
+  width: 100%;
+  margin-bottom: 0.4rem;
+}
+
+/* =========================================
+   HEADER & FOOTER 
+   ========================================= */
+header, footer {
+  background-color: var(--merah-tua);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='40' viewBox='0 0 80 40'%3E%3Cpath fill='%23AE1313' fill-opacity='0.4' d='M0 40c10 0 20-10 20-20S30 0 40 0s20 10 20 20 10 20 20 20v-5c-7.5 0-15-7.5-15-15S57.5 5 50 5 35 12.5 35 20s-7.5 15-15 15-15-7.5-15-15S-7.5 5-15 5v5c10 0 20 10 20 20z'/%3E%3C/svg%3E");
+  color: var(--krem);
+  text-align: center;
+  padding: 3rem 1rem;
+  border-bottom: 5px solid var(--oranye);
+}
+
+header h1, header h2, header p, footer h1, footer h2, footer p, footer a {
+  color: var(--pasir);
+}
+
+header em, header strong, header b, header mark,
+footer em, footer strong, footer b, footer mark {
+  color: var(--oranye);
+}
+
+footer a:hover {
+  color: var(--oranye);
+}
+
+footer {
+  border-top: 5px solid var(--oranye);
+  border-bottom: none;
+  margin-top: 3rem;
+}
+
+/* Logo */
+header h1::before {
+  content: "";
+  display: block;
+  width: 100px;
+  height: 100px;
+  margin: 0 auto 1rem auto;
+  background-image: url('../images/Logo_RemenRamen.jpg');
+  background-size: cover;
+  background-position: center;
+  border-radius: 50%;
+  border: 4px solid var(--krem);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+}
+
+/* =========================================
+   NAVIGATION (List Styling & Media Query)
+   ========================================= */
+nav {
+  background-color: var(--cokelat);
+  padding: 1rem;
+  text-align: center;
+}
+
+nav ul {
+  list-style-type: none; /* list styling requirement */
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+nav ul li a {
+  display: inline-block;
+  background-color: var(--merah-tua);
+  color: var(--krem);
+  padding: 0.8rem 1.5rem;
+  border-radius: 30px;
+  border: 2px solid var(--oranye);
+  font-family: 'Lilita One', cursive;
+  letter-spacing: 1px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+nav ul li a strong {
+  color: inherit;
+}
+
+nav ul li a:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 15px rgba(253, 170, 63, 0.4);
+}
+
+/* Media Query untuk Navigasi (Responsive Design) */
+@media screen and (max-width: 600px) {
+  nav ul {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+}
+
+/* =========================================
+   MENU CARDS (Article Styling)
+   ========================================= */
+#menu-unggulan h2 {
+  display: none;
+}
+
+#menu-unggulan {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  padding: 1rem 0;
+  align-items: stretch;
+}
+
+#menu-unggulan article {
+  background-color: var(--cokelat);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Fix warna label di dalam card */
+#menu-unggulan article strong {
+  color: var(--oranye);
+}
+
+/* Menambahkan foto menu ke tiap card via CSS ::before (Order: 0) */
+#menu-unggulan article::before {
+  content: "";
+  display: block;
+  height: 220px;
+  background-size: cover;
+  background-position: center;
+  border-bottom: 4px solid var(--oranye);
+  order: 0;
+}
+
+/* Pemetaan foto ke tiap-tiap ramen */
+#menu-unggulan article:nth-of-type(1)::before {
+  background-image: url('../images/Ramen_Tantan.jpg');
+}
+#menu-unggulan article:nth-of-type(2)::before {
+  background-image: url('../images/Ramen_Shoyu.jpg');
+}
+#menu-unggulan article:nth-of-type(3)::before {
+  background-image: url('../images/Ramen_AburaSoba.jpg');
+}
+
+/* Nama Menu (Order: 1) */
+#menu-unggulan article h3 {
+  order: 1;
+  margin: 1.5rem 1.5rem 0.5rem 1.5rem;
+  text-align: left;
+  font-size: 1.8rem;
+  color: var(--oranye);
+}
+
+/* Bagian Harga (Order: 2) */
+#menu-unggulan article p:nth-of-type(2) {
+  order: 2;
+  margin: 0 1.5rem 1rem 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px dashed var(--oranye);
+  font-weight: 700;
+  font-style: italic;
+  font-size: 1.3rem;
+  color: var(--pasir);
+  text-align: left;
+}
+
+/* Bagian Deskripsi (Order: 3) */
+#menu-unggulan article p:nth-of-type(1) {
+  order: 3;
+  margin: 0 1.5rem 1.5rem 1.5rem;
+  font-size: 1rem;
+  color: var(--krem);
+  text-align: left;
+}
+
+/* Link pemesanan di card (Order: 4 ) */
+#menu-unggulan article p:nth-of-type(3) {
+  order: 4;
+  margin-top: auto;
+  margin-bottom: 0;
+  background-color: var(--merah-tua);
+  text-align: center;
+  padding: 1.2rem;
+  transition: background-color 0.3s;
+}
+
+#menu-unggulan article p:nth-of-type(3) a {
+  color: var(--krem);
+}
+
+#menu-unggulan article p:nth-of-type(3):hover {
+  background-color: var(--oranye);
+}
+#menu-unggulan article p:nth-of-type(3):hover a {
+  color: var(--cokelat);
+}
+
+/* =========================================
+   TABLES & FORMS
+   ========================================= */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 2rem 0;
+  background-color: var(--cokelat);
+  color: var(--krem);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+table a {
+  color: var(--oranye);
+}
+
+table a:hover {
+  color: var(--pasir);
+}
+
+table, th, td {
+  border: 1px solid var(--merah-tua);
+}
+
+th, td {
+  padding: 1rem;
+  text-align: left; 
+}
+
+th {
+  background-color: var(--merah-tua);
+  color: var(--pasir);
+  font-family: 'Lilita One', cursive;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+}
+
+tfoot td,
+tfoot em {
+  color: var(--oranye); 
+}
+
+caption {
+  margin-bottom: 1rem;
+  color: var(--merah-tua);
+  font-weight: 600;
+}
+
+/* Form Styles */
+fieldset {
+  border: 2px solid var(--oranye);
+  border-radius: 12px;
+  background-color: var(--cokelat);
+  color: var(--krem);
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+fieldset p, fieldset label {
+  color: var(--krem);
+}
+
+fieldset strong, fieldset b, fieldset em, fieldset mark, legend strong {
+  color: var(--oranye);
+}
+
+legend {
+  font-family: 'Lilita One', cursive;
+  color: var(--pasir);
+  background-color: var(--merah-tua);
+  padding: 0.5rem 1.5rem;
+  border-radius: 20px;
+  border: 2px solid var(--oranye);
+}
+
+input[type="text"],
+input[type="number"],
+select,
+textarea {
+  width: 100%;
+  padding: 0.8rem;
+  margin-top: 0.5rem;
+  border-radius: 8px;
+  border: 2px solid var(--merah-tua);
+  background-color: var(--krem);
+  color: var(--cokelat);
+  font-family: 'Quicksand', sans-serif;
+  box-sizing: border-box;
+}
+
+button {
+  background-color: var(--oranye);
+  color: var(--cokelat);
+  border: none;
+  padding: 1rem 2rem;
+  font-family: 'Lilita One', cursive;
+  font-size: 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s, background-color 0.2s;
+}
+
+button:hover {
+  background-color: var(--pasir);
+  transform: scale(1.05);
+}
+
+/* Image styles general */
+figure {
+  text-align: center;
+  margin: 2rem 0;
+}
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+  border: 4px solid var(--oranye);
+}
