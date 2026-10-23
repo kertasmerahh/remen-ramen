@@ -66,13 +66,30 @@ Aplikasi ini dibangun menggunakan murni **HTML5 Semantic** tanpa dependensi CSS 
 Berikut adalah dokumentasi tampilan struktur HTML murni dari ketiga halaman:
 
 ### 1. Halaman Utama / Katalog Menu (`index.html`)
-![Tampilan Halaman Katalog Menu](assets/images/screenshots/screenshot-index.png)
+![Tampilan Halaman Katalog Menu](assets/images/screenshots/screenshot-index-0.png)
 
 ### 2. Halaman Formulir Pemesanan (`pesan.html`)
-![Tampilan Formulir Pemesanan Meja](assets/images/screenshots/screenshot-pesan.png)
+![Tampilan Formulir Pemesanan Meja](assets/images/screenshots/screenshot-pesan-0.png)
 
 ### 3. Halaman Dashboard Kasir & Dapur (`admin.html`)
 ![Tampilan Dashboard Kasir dan Dapur](assets/images/screenshots/screenshot-admin.png)
+
+---
+
+---
+
+## Update Pekan 3: Styling Desain Visual dengan CSS (`assets/css/style.css`)
+* **Identitas Visual & CSS Variables:** Menggunakan palet warna khas kedai Jepang (`--merah`, `--merah-tua`, `--krem`, `--pasir`, `--cokelat`, `--oranye`) serta pola gelombang *Seigaiha* pada `header` dan `footer`.
+* **Tipografi:** Mengintegrasikan Google Fonts (`Lilita One` untuk judul & `Quicksand` untuk teks isi).
+* **Layout & Responsivitas:** Menerapkan **CSS Grid** dan **Flexbox** pada kartu menu unggulan serta navigasi, dilengkapi `@media` query untuk tampilan *mobile* (maksimal lebar `600px`).
+* **Dokumentasi Tangkapan Layar (CSS):**
+  * **Tampilan Desktop:**
+    ![Tampilan Desktop] <img width="733" height="751" alt="css-desktop" src="https://github.com/user-attachments/assets/4257da75-ec09-436a-8253-04fc5e0f42b1" />
+
+
+  * **Tampilan Mobile:**
+    ![Tampilan Mobile] <img width="260" height="741" alt="css-mobile" src="https://github.com/user-attachments/assets/22263d0d-113b-49ea-a23c-50768563ee10" />
+
 
 ---
 
@@ -85,11 +102,14 @@ RemenRamen/
 ├── admin.html              # Halaman 3: Dashboard Kasir & Dapur
 │
 ├── assets/
+│   ├── css/
+│   │   └── style.css                 # Stylesheet CSS 
+│   │
 │   └── images/
 │       ├── menu-flyer.png  # Foto buku menu kedai
 │       └── screenshots/    # Folder bukti tangkapan layar tugas
-│           ├── screenshot-index.png
-│           ├── screenshot-pesan.png
+│           ├── screenshot-index-0.png
+│           ├── screenshot-pesan-0.png
 │           └── screenshot-admin.png
 │
 └── README.md               # Dokumentasi resmi proyek
@@ -99,7 +119,7 @@ RemenRamen/
 
 ## Roadmap Pengembangan Semester (Pekan 3 s.d. 14)
 * [x] **Pekan 2:** Fondasi Struktur Semantic HTML5 & Aksesibilitas (Selesai)
-* [ ] **Pekan 3:** Styling Desain Visual dengan CSS Murni (Warna brand, tipografi, & layout)
+* [x] **Pekan 3:** Styling Desain Visual dengan CSS Murni (Warna brand, tipografi, & layout)
 * [ ] **Pekan 4:** Implementasi Framework CSS (Bootstrap / Tailwind) agar responsif di HP & Tablet
 * [ ] **Pekan 5–8:** JavaScript Interaktif (Kalkulasi total harga otomatis & keranjang belanja floating)
 * [ ] **Pekan 9–14:** Backend & Database PostgreSQL untuk sistem pemesanan nyata
