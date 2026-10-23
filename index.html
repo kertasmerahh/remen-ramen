@@ -3,195 +3,320 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Remen Ramen - Katalog Menu Otentik Sragen</title>
+  <title>Remen Ramen - Autentik Ramen Kedai Sragen</title>
+
+  <!-- Google Font: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap 5 & Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <!-- Custom CSS -->
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-  <!-- ================= HEADER: Identitas Kedai ================= -->
-  <header>
-    <h1>Remen Ramen</h1>
-    <p><em>Ramen yang bikin Remen</em></p>
-    <p>Buka Setiap Hari: 10.00 - 20.00 WIB | Lokasi: Sragen, Jawa Tengah</p>
-  </header>
-  <!-- ================= NAV: Navigasi 2 Pilar Utama ================= -->
-  <nav aria-label="Navigasi Utama">
-    <ul>
-      <li><a href="index.html"><strong>Katalog Menu</strong></a></li>
-      <li><a href="pesan.html">Pesan Sekarang</a></li>
-    </ul>
+
+  <!-- ================= NAVBAR PELANGGAN ================= -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm py-3">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+        <img src="assets/images/Logo_RemenRamen.jpg" alt="Logo Remen Ramen" class="rounded-circle border" width="40" height="40">
+        <span class="navbar-brand-title fs-4 mb-0">Remen Ramen</span>
+      </a>
+
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navCustomer">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse justify-content-end" id="navCustomer">
+        <ul class="navbar-nav align-items-center gap-1 gap-lg-3 mt-3 mt-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active fw-bold text-danger" href="index.html"><i class="bi bi-book-half me-1"></i>Katalog Menu</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link fw-semibold text-secondary" href="pesan.html"><i class="bi bi-qr-code-scan me-1"></i>Pesan di Meja</a>
+          </li>
+          <li class="nav-item ms-lg-2">
+            <a href="pesan.html" class="btn btn-brand btn-sm shadow-sm"><i class="bi bi-bag-plus-fill me-1"></i>Pesan Sekarang</a>
+          </li>
+        </ul>
+      </div>
+    </div>
   </nav>
-  <hr>
-  <!-- ================= MAIN: Konten Utama Pelanggan ================= -->
-  <main>
-    <!-- Section 1: Sambutan & Panduan Pesan di Meja -->
-    <section id="sambutan">
-      <h2>Selamat Datang di Remen Ramen!</h2>
-      <p>
-        Nikmati racikan ramen berkuah kaldu gurih dan mie kenyal buatan sendiri khas kedai kami di Sragen. 
-        Anda dapat melihat daftar menu di bawah ini, atau langsung membuka halaman 
-        <strong><a href="pesan.html">"Pesan Sekarang"</a></strong> 
-        untuk mengirimkan pesanan langsung ke dapur kami!
+
+  <!-- ================= 1. SAMBUTAN & HERO BANNER ================= -->
+  <header class="hero-banner py-5" id="sambutan">
+    <div class="container py-3">
+      <div class="row align-items-center gy-4">
+        <div class="col-12 col-lg-7 text-center text-lg-start">
+          <span class="badge badge-soft-red px-3 py-2 rounded-pill mb-3">
+            <i class="bi bi-geo-alt-fill me-1"></i>Kedai Resmi Sragen, Jawa Tengah
+          </span>
+          <h1 class="display-5 fw-bold text-dark mb-3">
+            Selamat Datang di <span style="color: var(--brand-red);">Remen Ramen!</span>
+          </h1>
+          <p class="lead text-secondary mb-4" style="max-width: 540px;">
+            Nikmati racikan ramen berkuah kaldu gurih dan mie kenyal buatan sendiri khas kedai kami di Sragen. Silakan cek buku menu resmi di bawah ini atau langsung kirimkan pesanan ke dapur kami!
+          </p>
+          <div class="d-flex flex-wrap justify-content-center justify-content-lg-start gap-2">
+            <a href="pesan.html" class="btn btn-brand btn-lg shadow-sm">
+              <i class="bi bi-qr-code me-2"></i>Pesan Sekarang
+            </a>
+            <a href="#buku-menu" class="btn btn-outline-secondary btn-lg">
+              Buku Menu Resmi
+            </a>
+          </div>
+        </div>
+        <div class="col-12 col-lg-5 text-center">
+          <img src="assets/images/Logo_RemenRamen.jpg" alt="Logo Kedai Remen Ramen" class="img-fluid rounded-4 shadow-lg border border-3 border-white" style="max-width: 280px;">
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= KONTEN UTAMA ================= -->
+  <main class="container my-5">
+
+    <!-- 2. BUKU MENU -->
+    <section class="card border-0 shadow-sm rounded-4 p-4 p-lg-5 mb-5 bg-white text-center" id="buku-menu">
+      <span class="text-danger fw-bold small text-uppercase">Buku Menu Kedai</span>
+      <h2 class="h3 fw-bold mb-3">Buku Menu Resmi Kedai</h2>
+      <p class="text-muted mx-auto mb-4" style="max-width: 600px;">
+        Berikut tampilan buku menu fisik resmi yang tersedia langsung di setiap meja kedai Remen Ramen Sragen:
       </p>
+      <div class="text-center">
+        <img src="assets/images/Menu_RemenRamen.png" class="img-fluid rounded-4 shadow border" alt="Buku Menu Resmi Remen Ramen" style="max-height: 840px;">
+        <figcaption class="mt-3 text-muted small fst-italic">Buku menu makan &amp; minum Kedai Remen Ramen Sragen.</figcaption>
+      </div>
     </section>
-    <!-- Section 2: Banner Gambar Buku Menu Asli -->
-    <section id="buku-menu-fisik">
-      <h2>Buku Menu Resmi Kedai</h2>
-      <figure>
-        <img 
-          src="assets/images/Menu_RemenRamen.png"
-          alt="Buku Menu Resmi Remen Ramen berisi pilihan Tantan Ramen, Shoyu Ramen, Abura Soba seharga 15 ribu, pilihan Snack Katsu dan Karage seharga 7 ribu, serta aneka Minuman segar 3 sampai 5 ribu" 
-          width="1000"
-        >
-        <figcaption><em>Buku menu makan &amp; minum Kedai Remen Ramen Sragen.</em></figcaption>
-      </figure>
+
+    <!-- 3. MENU RAMEN (GRID CARDS 3 KOLOM BOOTSTRAP) -->
+    <section class="mb-5" id="menu-utama">
+      <div class="d-flex justify-content-between align-items-end mb-4">
+        <div>
+          <span class="text-danger fw-bold small text-uppercase">Pilihan Unggulan</span>
+          <h2 class="fw-bold mb-0">Menu Ramen Utama</h2>
+        </div>
+        <span class="badge bg-danger fs-6 px-3 py-2 rounded-pill">Serba Rp 15.000</span>
+      </div>
+
+      <div class="row g-4">
+        <!-- Card 1: Tantan Ramen -->
+        <div class="col-12 col-md-6 col-lg-4">  
+          <div class="card card-menu h-100">
+            <div class="position-relative">
+              <img src="assets/images/Ramen_Tantan.jpg" class="card-img-top card-menu-img" alt="Tantan Ramen">
+              <span class="position-absolute top-0 end-0 m-3 badge bg-danger rounded-pill px-3 py-2 shadow-sm">Best Seller</span>
+            </div>
+            <div class="card-body p-4 d-flex flex-column">
+              <h3 class="h5 fw-bold mb-1">1. Tantan Ramen</h3>
+              <p class="text-danger fw-bold fs-5 mb-2">Rp 15.000</p>
+              <p class="text-muted small flex-grow-1">
+                Kuah creamy pedas gurih kental dan pekat khas wijen sangrai dengan taburan daging cincang lezat.
+              </p>
+              <a href="pesan.html" class="btn btn-outline-danger w-100 fw-semibold rounded-pill mt-3">
+                <i class="bi bi-cart-plus me-1"></i>Pesan Tantan Ramen
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2: Shoyu Ramen -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="card card-menu h-100">
+            <div class="position-relative">
+              <img src="assets/images/Ramen_Shoyu.jpg" class="card-img-top card-menu-img" alt="Shoyu Ramen">
+            </div>
+            <div class="card-body p-4 d-flex flex-column">
+              <h3 class="h5 fw-bold mb-1">2. Shoyu Ramen</h3>
+              <p class="text-danger fw-bold fs-5 mb-2">Rp 15.000</p>
+              <p class="text-muted small flex-grow-1">
+                Kuah kaldu ayam bening yang gurih, segar, dan menenangkan dengan racikan shoyu Jepang istimewa.
+              </p>
+              <a href="pesan.html" class="btn btn-outline-danger w-100 fw-semibold rounded-pill mt-3">
+                <i class="bi bi-cart-plus me-1"></i>Pesan Shoyu Ramen
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3: Abura Soba -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="card card-menu h-100">
+            <div class="position-relative">
+              <img src="assets/images/Ramen_AburaSoba.jpg" class="card-img-top card-menu-img" alt="Abura Soba">
+            </div>
+            <div class="card-body p-4 d-flex flex-column">
+              <h3 class="h5 fw-bold mb-1">3. Abura Soba</h3>
+              <p class="text-danger fw-bold fs-5 mb-2">Rp 15.000</p>
+              <p class="text-muted small flex-grow-1">
+                Ramen kering gurih tanpa kuah berpadu minyak bumbu pedas rahasia dengan 3 pilihan level kepedasan.
+              </p>
+              <a href="pesan.html" class="btn btn-outline-danger w-100 fw-semibold rounded-pill mt-3">
+                <i class="bi bi-cart-plus me-1"></i>Pesan Abura Soba
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
-    <hr>
-    <!-- Section 3: Sorotan Menu Ramen Unggulan (Semantic Articles) -->
-    <section id="menu-unggulan">
-      <h2>Menu Ramen Utama (Serba Rp 15.000)</h2>
-      <!-- Item 1: Tantan Ramen -->
-      <article>
-        <h3>1. Tantan Ramen</h3>
-        <p><strong>Cita Rasa:</strong> Kuah creamy pedas gurih kental dan pekat.</p>
-        <p><strong>Harga:</strong> Rp 15.000</p>
-        <p><a href="pesan.html">&raquo; Pesan Tantan Ramen Sekarang &laquo;</a></p>
-      </article>
-      <!-- Item 2: Shoyu Ramen -->
-      <article>
-        <h3>2. Shoyu Ramen</h3>
-        <p><strong>Cita Rasa:</strong> Kuah kaldu ayam bening yang gurih, segar, dan menenangkan.</p>
-        <p><strong>Harga:</strong> Rp 15.000</p>
-        <p><a href="pesan.html">&raquo; Pesan Shoyu Ramen Sekarang &laquo;</a></p>
-      </article>
-      <!-- Item 3: Abura Soba -->
-      <article>
-        <h3>3. Abura Soba</h3>
-        <p><strong>Cita Rasa:</strong> Ramen kering pedas tanpa kuah dengan 3 pilihan level kepedasan.</p>
-        <p><strong>Harga:</strong> Rp 15.000</p>
-        <p><a href="pesan.html">&raquo; Pesan Abura Soba Sekarang &laquo;</a></p>
-      </article>
+
+    <!-- 4. SNACK & MINUMAN -->
+    <section class="mb-5">
+      <h2 class="h4 fw-bold mb-3">Snack &amp; Minuman Segar</h2>
+      <div class="row g-3">
+        <div class="col-12 col-md-6">
+          <div class="card card-menu p-3">
+            <div class="d-flex justify-content-between align-items-center">
+              <div>
+                <h3 class="h6 fw-bold mb-1"><i class="bi bi-egg-fried text-danger me-2"></i>Chicken Katsu &amp; Karage</h3>
+                <p class="text-muted small mb-0">Camilan daging fillet krispi pelengkap mangkuk ramen</p>
+              </div>
+              <span class="badge bg-danger-subtle text-danger fs-6 px-3 py-2 rounded-pill">Rp 7.000</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-6">
+          <div class="card card-menu p-3">
+            <div class="d-flex justify-content-between align-items-center">
+              <div>
+                <h3 class="h6 fw-bold mb-1"><i class="bi bi-cup-straw text-danger me-2"></i>Aneka Minuman Segar</h3>
+                <p class="text-muted small mb-0">Tea, Lychee Tea, Lemon Tea, Jeruk, Matcha (Es / Hangat)</p>
+              </div>
+              <span class="badge bg-danger-subtle text-danger fs-6 px-3 py-2 rounded-pill">Rp 3.000 - 5.000</span>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
-    <hr>
-    <!-- Section 4: Tabel Data Tabular Lengkap -->
-    <section id="daftar-harga-lengkap">
-      <h2>Daftar Seluruh Menu & Kategori Lengkap</h2>
-      <p>Berikut adalah tabel ringkasan menu yang tersedia hari ini di Remen Ramen:</p>
-      <table border="1" cellpadding="8" cellspacing="0">
-        <caption><em>Tabel 1: Daftar Menu, Kategori, Harga, dan Ketersediaan</em></caption>
-        <thead>
-          <tr>
-            <th>No</th>
-            <th>Nama Menu</th>
-            <th>Kategori</th>
-            <th>Harga (Rp)</th>
-            <th>Status Stok</th>
-            <th>Aksi</th>
-          </tr>
-        </thead>
-        <tbody>
-          <!-- Ramen -->
-          <tr>
-            <td>1</td>
-            <td>Tantan Ramen</td>
-            <td>Ramen Kuah</td>
-            <td>15.000</td>
-            <td>Tersedia</td>
-            <td><a href="pesan.html">Pesan</a></td>
-          </tr>
-          <tr>
-            <td>2</td>
-            <td>Shoyu Ramen</td>
-            <td>Ramen Kuah</td>
-            <td>15.000</td>
-            <td>Tersedia</td>
-            <td><a href="pesan.html">Pesan</a></td>
-          </tr>
-          <tr>
-            <td>3</td>
-            <td>Abura Soba</td>
-            <td>Dry Ramen</td>
-            <td>15.000</td>
-            <td>Tersedia</td>
-            <td><a href="pesan.html">Pesan</a></td>
-          </tr>
-          <!-- Snack Pendamping -->
-          <tr>
-            <td>4</td>
-            <td>Katsu</td>
-            <td>Snack Pendamping</td>
-            <td>7.000</td>
-            <td>Tersedia</td>
-            <td><a href="pesan.html">Pesan</a></td>
-          </tr>
-          <tr>
-            <td>5</td>
-            <td>Karage</td>
-            <td>Snack Pendamping</td>
-            <td>7.000</td>
-            <td>Tersedia</td>
-            <td><a href="pesan.html">Pesan</a></td>
-          </tr>
-          <!-- Minuman -->
-          <tr>
-            <td>6</td>
-            <td>Tea (Hot / Ice)</td>
-            <td>Minuman Segar</td>
-            <td>3.000</td>
-            <td>Tersedia</td>
-            <td><a href="pesan.html">Pesan</a></td>
-          </tr>
-          <tr>
-            <td>7</td>
-            <td>Lychee Tea (Hot / Ice)</td>
-            <td>Minuman Segar</td>
-            <td>4.000</td>
-            <td>Tersedia</td>
-            <td><a href="pesan.html">Pesan</a></td>
-          </tr>
-          <tr>
-            <td>8</td>
-            <td>Lemon Tea (Hot / Ice)</td>
-            <td>Minuman Segar</td>
-            <td>5.000</td>
-            <td>Tersedia</td>
-            <td><a href="pesan.html">Pesan</a></td>
-          </tr>
-          <tr>
-            <td>9</td>
-            <td>Jeruk (Hot / Ice)</td>
-            <td>Minuman Segar</td>
-            <td>5.000</td>
-            <td>Tersedia</td>
-            <td><a href="pesan.html">Pesan</a></td>
-          </tr>
-          <tr>
-            <td>10</td>
-            <td>Matcha (Hot / Ice)</td>
-            <td>Minuman Segar</td>
-            <td>5.000</td>
-            <td>Tersedia</td>
-            <td><a href="pesan.html">Pesan</a></td>
-          </tr>
-        </tbody>
-        <tfoot>
-          <tr>
-            <td colspan="6">
-              <em>* Catatan: Semua bahan kaldu dijamin 100% Halal. Harga sudah termasuk pajak kedai.</em>
-            </td>
-          </tr>
-        </tfoot>
-      </table>
+
+    <!-- 5. TABEL DAFTAR SELURUH MENU & KATEGORI LENGKAP -->
+    <section class="mb-5" id="daftar-harga-lengkap">
+      <div class="table-card">
+        <div class="p-3 border-bottom bg-white">
+          <h2 class="h5 fw-bold mb-0 text-dark">Daftar Seluruh Menu &amp; Kategori Lengkap</h2>
+          <small class="text-muted">Berikut adalah tabel ringkasan menu yang tersedia hari ini di Remen Ramen:</small>
+        </div>
+        <div class="table-responsive">
+          <table class="table table-hover align-middle mb-0">
+            <thead class="table-light text-secondary small text-uppercase">
+              <tr>
+                <th scope="col" class="ps-3">No</th>
+                <th scope="col">Nama Menu</th>
+                <th scope="col">Kategori</th>
+                <th scope="col">Harga (Rp)</th>
+                <th scope="col">Status Stok</th>
+                <th scope="col" class="text-end pe-3">Aksi</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="ps-3">1</td>
+                <td class="fw-semibold">Tantan Ramen</td>
+                <td>Ramen Kuah</td>
+                <td>15.000</td>
+                <td><span class="badge bg-success-subtle text-success">Tersedia</span></td>
+                <td class="text-end pe-3"><a href="pesan.html" class="text-danger fw-semibold text-decoration-none">&raquo; Pesan</a></td>
+              </tr>
+              <tr>
+                <td class="ps-3">2</td>
+                <td class="fw-semibold">Shoyu Ramen</td>
+                <td>Ramen Kuah</td>
+                <td>15.000</td>
+                <td><span class="badge bg-danger-subtle text-danger">Habis (Sold Out)</span></td>
+                <td class="text-end pe-3"><a href="pesan.html" class="text-danger fw-semibold text-decoration-none">&raquo; Pesan</a></td>
+              </tr>
+              <tr>
+                <td class="ps-3">3</td>
+                <td class="fw-semibold">Abura Soba</td>
+                <td>Dry Ramen</td>
+                <td>15.000</td>
+                <td><span class="badge bg-success-subtle text-success">Tersedia</span></td>
+                <td class="text-end pe-3"><a href="pesan.html" class="text-danger fw-semibold text-decoration-none">&raquo; Pesan</a></td>
+              </tr>
+              <tr>
+                <td class="ps-3">4</td>
+                <td class="fw-semibold">Katsu</td>
+                <td>Snack Pendamping</td>
+                <td>7.000</td>
+                <td><span class="badge bg-success-subtle text-success">Tersedia</span></td>
+                <td class="text-end pe-3"><a href="pesan.html" class="text-danger fw-semibold text-decoration-none">&raquo; Pesan</a></td>
+              </tr>
+              <tr>
+                <td class="ps-3">5</td>
+                <td class="fw-semibold">Karage</td>
+                <td>Snack Pendamping</td>
+                <td>7.000</td>
+                <td><span class="badge bg-success-subtle text-success">Tersedia</span></td>
+                <td class="text-end pe-3"><a href="pesan.html" class="text-danger fw-semibold text-decoration-none">&raquo; Pesan</a></td>
+              </tr>
+              <tr>
+                <td class="ps-3">6</td>
+                <td class="fw-semibold">Tea (Hot / Ice)</td>
+                <td>Minuman Segar</td>
+                <td>3.000</td>
+                <td><span class="badge bg-success-subtle text-success">Tersedia</span></td>
+                <td class="text-end pe-3"><a href="pesan.html" class="text-danger fw-semibold text-decoration-none">&raquo; Pesan</a></td>
+              </tr>
+              <tr>
+                <td class="ps-3">7</td>
+                <td class="fw-semibold">Lychee Tea (Hot / Ice)</td>
+                <td>Minuman Segar</td>
+                <td>4.000</td>
+                <td><span class="badge bg-success-subtle text-success">Tersedia</span></td>
+                <td class="text-end pe-3"><a href="pesan.html" class="text-danger fw-semibold text-decoration-none">&raquo; Pesan</a></td>
+              </tr>
+              <tr>
+                <td class="ps-3">8</td>
+                <td class="fw-semibold">Lemon Tea (Hot / Ice)</td>
+                <td>Minuman Segar</td>
+                <td>5.000</td>
+                <td><span class="badge bg-success-subtle text-success">Tersedia</span></td>
+                <td class="text-end pe-3"><a href="pesan.html" class="text-danger fw-semibold text-decoration-none">&raquo; Pesan</a></td>
+              </tr>
+              <tr>
+                <td class="ps-3">9</td>
+                <td class="fw-semibold">Jeruk (Hot / Ice)</td>
+                <td>Minuman Segar</td>
+                <td>5.000</td>
+                <td><span class="badge bg-success-subtle text-success">Tersedia</span></td>
+                <td class="text-end pe-3"><a href="pesan.html" class="text-danger fw-semibold text-decoration-none">&raquo; Pesan</a></td>
+              </tr>
+              <tr>
+                <td class="ps-3">10</td>
+                <td class="fw-semibold">Matcha (Hot / Ice)</td>
+                <td>Minuman Segar</td>
+                <td>5.000</td>
+                <td><span class="badge bg-success-subtle text-success">Tersedia</span></td>
+                <td class="text-end pe-3"><a href="pesan.html" class="text-danger fw-semibold text-decoration-none">&raquo; Pesan</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
     </section>
+
   </main>
-  <hr>
-  <!-- ================= FOOTER: Info Kontak & Hak Cipta ================= -->
-  <footer>
-    <section>
-      <h3>Kontak & Lokasi Kedai</h3>
-      <p>Alamat: Jl. Raya Sragen, Kabupaten Sragen, Jawa Tengah</p>
-      <p>Instagram: @remenramenn</p>
-    </section>
-    <p><small><a href="admin.html">&rarr; Masuk ke Layar Kasir / Dapur (Khusus Staf)</a></small></p>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="bg-dark text-white py-5 mt-5">
+    <div class="container text-center">
+      <h3 class="h5 fw-bold text-danger mb-2">Remen Ramen Sragen</h3>
+      <p class="text-white-50 small mb-2">Buka Setiap Hari: 10.00 - 20.00 WIB | Alamat: Jl. Raya Sragen, Sragen, Jawa Tengah</p>
+      <p class="text-white-50 small mb-4">Instagram: @remenramenn</p>
+      
+      <div class="pt-3 border-top border-secondary border-opacity-25">
+        <a href="admin.html" class="text-secondary text-decoration-none small">
+          <i class="bi bi-shield-lock me-1"></i>Akses Khusus Staf: Panel Kasir &amp; Dapur
+        </a>
+      </div>
+    </div>
   </footer>
+
+  <!-- Bootstrap 5.3 JS Bundle (Bawaan Bootstrap untuk Navbar Collapse) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

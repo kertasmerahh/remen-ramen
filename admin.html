@@ -3,225 +3,269 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dashboard Kasir &amp; Dapur - Remen Ramen Sragen</title>
+  <title>Dashboard Kasir &amp; Dapur - Remen Ramen</title>
+
+  <!-- Google Font: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap 5 & Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <!-- Custom CSS -->
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
-<body>
+<body class="bg-admin">
 
-  <!-- ================= HEADER: Panel Kontrol Staf ================= -->
-  <header>
-    <h1>Remen Ramen - Panel Kontrol Kasir &amp; Dapur</h1>
-    <p><em>Sistem Manajemen Pesanan &amp; Ketersediaan Menu Kedai</em></p>
-    <p>
-      <strong>Staf Bertugas:</strong> Kasir 01 (Shift Siang) | 
-      <strong>Status Kedai:</strong> <mark>Buka &amp; Menerima Pesanan</mark>
-    </p>
-  </header>
+  <!-- ================= NAVBAR ADMIN ================= -->
+  <nav class="navbar navbar-expand-lg navbar-dark admin-navbar sticky-top py-3">
+    <div class="container-fluid px-lg-4">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="admin.html">
+        <img src="assets/images/Logo_RemenRamen.jpg" alt="Logo Remen Ramen" class="rounded-circle border" width="36" height="36">
+        <span class="fw-bold">Remen Ramen <span class="badge bg-danger ms-1">Kitchen Hub</span></span>
+      </a>
 
-  <!-- ================= NAV: Navigasi Internal Staf ================= -->
-  <nav aria-label="Navigasi Panel Admin">
-    <ul>
-      <li><a href="#antrean-pesanan"><strong>Tabel Pesanan Masuk</strong></a></li>
-      <li><a href="#kontrol-stok"><strong>Kontrol Stok Menu</strong></a></li>
-      <li><a href="index.html">Keluar ke Mode Pelanggan</a></li>
-    </ul>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navAdmin">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navAdmin">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item">
+            <a class="nav-link active fw-semibold" href="#antrean-live"><i class="bi bi-clock-history me-1"></i>Antrean Pesanan</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white-50" href="#kontrol-stok"><i class="bi bi-box-seam me-1"></i>Kontrol Stok</a>
+          </li>
+        </ul>
+        <div class="d-flex align-items-center gap-3">
+          <span class="text-white-50 small">
+            <i class="bi bi-person-circle text-success me-1"></i>Kasir 01 (Shift Siang)
+          </span>
+          <a href="index.html" class="btn btn-outline-light btn-sm rounded-pill px-3">
+            <i class="bi bi-arrow-left me-1"></i>Ke Layar Pelanggan
+          </a>
+        </div>
+      </div>
+    </div>
   </nav>
 
-  <hr>
+  <!-- ================= MAIN ADMIN ================= -->
+  <main class="container-fluid px-lg-4 my-4">
 
-  <!-- ================= MAIN: Konten Operasional Kedai ================= -->
-  <main>
+    <!-- KPI STATS CARDS (WARNA SOFT PASTEL & TANPA BORDER TEBAL MENCOLOK) -->
+    <div class="row g-3 mb-4">
+      <div class="col-12 col-md-4">
+        <div class="card-kpi p-3">
+          <div class="d-flex justify-content-between align-items-center">
+            <div>
+              <p class="text-muted small fw-bold text-uppercase mb-1">Total Pesanan Masuk</p>
+              <h2 class="h3 fw-bold text-dark mb-0">12 Meja</h2>
+            </div>
+            <div class="bg-primary-subtle text-primary-emphasis rounded-3 px-3 py-2">
+              <i class="bi bi-receipt fs-4"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-4">
+        <div class="card-kpi p-3">
+          <div class="d-flex justify-content-between align-items-center">
+            <div>
+              <p class="text-muted small fw-bold text-uppercase mb-1">Sedang Dimasak</p>
+              <h2 class="h3 fw-bold text-warning-emphasis mb-0">3 Antrean</h2>
+            </div>
+            <div class="bg-warning-subtle text-warning-emphasis rounded-3 px-3 py-2">
+              <i class="bi bi-fire fs-4"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-4">
+        <div class="card-kpi p-3">
+          <div class="d-flex justify-content-between align-items-center">
+            <div>
+              <p class="text-muted small fw-bold text-uppercase mb-1">Menu Habis (Sold Out)</p>
+              <h2 class="h3 fw-bold text-danger-emphasis mb-0">1 Menu</h2>
+            </div>
+            <div class="bg-danger-subtle text-danger-emphasis rounded-3 px-3 py-2">
+              <i class="bi bi-x-circle fs-4"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
-    <!-- Section 1: Ringkasan Metrik Hari Ini -->
-    <section id="ringkasan-operasional">
-      <h2>Ringkasan Operasional Hari Ini</h2>
-      <ul>
-        <li><strong>Total Pesanan Masuk:</strong> 12 Meja</li>
-        <li><strong>Pesanan Sedang Dimasak:</strong> 3 Meja</li>
-        <li><strong>Menu Habis:</strong> 1 Menu (Shoyu Ramen)</li>
-      </ul>
-    </section>
+    <!-- TABEL 1: ANTREAN LIVE -->
+    <div class="table-card mb-5" id="antrean-live">
+      <div class="p-3 border-bottom d-flex justify-content-between align-items-center bg-white">
+        <div>
+          <h2 class="h5 fw-bold mb-0 text-dark"><i class="bi bi-list-task text-danger me-2"></i>Antrean Pesanan Aktif</h2>
+          <small class="text-muted">Data pesanan meja masuk langsung dari scan pelanggan</small>
+        </div>
+        <span class="badge bg-success-subtle text-success-emphasis border border-success-subtle px-3 py-2 rounded-pill small">
+          <i class="bi bi-circle-fill me-1" style="font-size: 8px;"></i>Live Sinkronisasi
+        </span>
+      </div>
 
-    <hr>
+      <div class="table-responsive">
+        <table class="table table-hover align-middle mb-0">
+          <thead class="table-light text-secondary small text-uppercase">
+            <tr>
+              <th scope="col" class="ps-3">Antrean</th>
+              <th scope="col">Meja</th>
+              <th scope="col">Nama Pemesan</th>
+              <th scope="col">Rincian Menu &amp; Porsi</th>
+              <th scope="col">Level Pedas &amp; Catatan</th>
+              <th scope="col">Total</th>
+              <th scope="col" class="text-center">Pembayaran</th>
+              <th scope="col" class="text-center">Status Pesanan</th>
+              <th scope="col" class="text-end pe-3">Aksi</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="ps-3"><span class="badge bg-secondary-subtle text-dark fw-bold px-2 py-1">#001</span></td>
+              <td><span class="fw-bold text-danger-emphasis">Meja 04</span></td>
+              <td class="fw-medium">Budi Santoso</td>
+              <td>
+                <small class="d-block">&bull; 1x Tantan Ramen (Rp 15.000)</small>
+                <small class="d-block">&bull; 1x Chicken Katsu (+Rp 7.000)</small>
+                <small class="d-block">&bull; 1x Es Teh Manis (+Rp 3.000)</small>
+              </td>
+              <td>
+                <span class="badge bg-danger-subtle text-danger-emphasis d-inline-block text-center" style="width: 85px;">Level 2</span><br>
+                <small class="text-muted">Daun bawang dibanyakin</small>
+              </td>
+              <td class="fw-bold">Rp 25.000</td>
+              <td class="text-center">
+                <span class="badge bg-secondary-subtle text-secondary-emphasis rounded-pill py-2 d-inline-block text-center" style="width: 105px;">Tunai</span>
+              </td>
+              <td class="text-center">
+                <span class="badge bg-warning-subtle text-warning-emphasis rounded-pill py-2 d-inline-block text-center" style="width: 115px;">Dimasak</span>
+              </td>
+              <td class="text-end pe-3 text-nowrap">
+                <button type="button" class="btn btn-sm btn-success rounded-pill me-1" style="width: 105px;">Selesai</button>
+                <button type="button" class="btn btn-sm btn-outline-secondary rounded-pill px-2"><i class="bi bi-x-lg"></i></button>
+              </td>
+            </tr>
 
-    <!-- Section 2: Tabel Antrean Pesanan Meja -->
-    <section id="antrean-pesanan">
-      <h2>1. Antrean Pesanan Meja</h2>
-      <p>Berikut adalah pesanan yang masuk dari pelanggan melalui QR meja atau kasir:</p>
+            <tr>
+              <td class="ps-3"><span class="badge bg-secondary-subtle text-dark fw-bold px-2 py-1">#002</span></td>
+              <td><span class="fw-bold text-danger-emphasis">Meja 02</span></td>
+              <td class="fw-medium">Siti Rahma</td>
+              <td>
+                <small class="d-block">&bull; 2x Abura Soba (Rp 30.000)</small>
+                <small class="d-block">&bull; 2x Matcha Ice (+Rp 10.000)</small>
+              </td>
+              <td>
+                <span class="badge bg-danger-subtle text-danger-emphasis d-inline-block text-center" style="width: 85px;">Level 3 &amp; 1</span><br>
+                <small class="text-muted">Kuah dipisah</small>
+              </td>
+              <td class="fw-bold">Rp 40.000</td>
+              <td class="text-center">
+                <span class="badge bg-primary-subtle text-primary-emphasis rounded-pill py-2 d-inline-block text-center" style="width: 105px;">QRIS Lunas</span>
+              </td>
+              <td class="text-center">
+                <span class="badge bg-info-subtle text-info-emphasis rounded-pill py-2 d-inline-block text-center" style="width: 115px;">Siap Antar</span>
+              </td>
+              <td class="text-end pe-3 text-nowrap">
+                <button type="button" class="btn btn-sm btn-success rounded-pill me-1" style="width: 105px;">Selesai</button>
+                <button type="button" class="btn btn-sm btn-outline-secondary rounded-pill px-2"><i class="bi bi-x-lg"></i></button>
+              </td>
+            </tr>
 
-      <table border="1" cellpadding="8" cellspacing="0">
-        <caption><em>Tabel 1: Daftar Antrean Pesanan Aktif Pelanggan</em></caption>
-        <thead>
-          <tr>
-            <th>No. Antrean</th>
-            <th>No. Meja</th>
-            <th>Nama Pemesan</th>
-            <th>Rincian Menu &amp; Porsi</th>
-            <th>Level Pedas &amp; Catatan Dapur</th>
-            <th>Total Tagihan</th>
-            <th>Metode Bayar</th>
-            <th>Status Pesanan</th>
-            <th>Aksi Kasir</th>
-          </tr>
-        </thead>
-        <tbody>
-          <!-- Baris Pesanan 1 -->
-          <tr>
-            <td><strong>#001</strong></td>
-            <td>Meja 04</td>
-            <td>Budi Santoso</td>
-            <td>
-              - 1x Tantan Ramen (Rp 15.000)<br>
-              - 1x Chicken Katsu (+Rp 7.000)<br>
-              - 1x Es Teh Manis (+Rp 3.000)
-            </td>
-            <td>Level 2. <em>Catatan: Bawang goreng dibanyakin</em></td>
-            <td>Rp 25.000</td>
-            <td>Tunai (Cash)</td>
-            <td><mark>Sedang Dimasak</mark></td>
-            <td>
-              <button type="button">Tandai Selesai</button>
-              <button type="button">Batalkan</button>
-            </td>
-          </tr>
+            <tr>
+              <td class="ps-3"><span class="badge bg-secondary-subtle text-dark fw-bold px-2 py-1">#003</span></td>
+              <td><span class="fw-bold text-danger-emphasis">Meja 07</span></td>
+              <td class="fw-medium">Mas Agus</td>
+              <td>
+                <small class="d-block">&bull; 1x Tantan Ramen (Rp 15.000)</small>
+                <small class="d-block">&bull; 1x Lemon Tea (+Rp 5.000)</small>
+              </td>
+              <td>
+                <span class="badge bg-secondary-subtle text-secondary-emphasis d-inline-block text-center" style="width: 85px;">Level 0</span>
+              </td>
+              <td class="fw-bold">Rp 20.000</td>
+              <td class="text-center">
+                <span class="badge bg-warning-subtle text-warning-emphasis rounded-pill py-2 d-inline-block text-center" style="width: 105px;">Belum Bayar</span>
+              </td>
+              <td class="text-center">
+                <span class="badge bg-secondary-subtle text-secondary-emphasis rounded-pill py-2 d-inline-block text-center" style="width: 115px;">Menunggu</span>
+              </td>
+              <td class="text-end pe-3 text-nowrap">
+                <button type="button" class="btn btn-sm btn-secondary rounded-pill me-1" style="width: 105px;">Konfirmasi</button>
+                <button type="button" class="btn btn-sm btn-outline-secondary rounded-pill px-2"><i class="bi bi-x-lg"></i></button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
 
-          <!-- Baris Pesanan 2 -->
-          <tr>
-            <td><strong>#002</strong></td>
-            <td>Meja 02</td>
-            <td>Siti Rahma</td>
-            <td>
-              - 2x Abura Soba (Rp 30.000)<br>
-              - 2x Matcha Ice (+Rp 10.000)
-            </td>
-            <td>Level 3 &amp; Level 1. <em>Catatan: Kuah dipisah</em></td>
-            <td>Rp 40.000</td>
-            <td>QRIS (Lunas)</td>
-            <td><mark>Menunggu Diantar</mark></td>
-            <td>
-              <button type="button">Tandai Selesai</button>
-              <button type="button">Batalkan</button>
-            </td>
-          </tr>
-
-          <!-- Baris Pesanan 3 -->
-          <tr>
-            <td><strong>#003</strong></td>
-            <td>Meja 07</td>
-            <td>Mas Agus</td>
-            <td>
-              - 1x Tantan Ramen (Rp 15.000)<br>
-              - 1x Lemon Tea Hangat (+Rp 5.000)
-            </td>
-            <td>Level 0 (Tanpa Pedas)</td>
-            <td>Rp 20.000</td>
-            <td>Tunai (Belum Bayar)</td>
-            <td><em>Menunggu Pembayaran</em></td>
-            <td>
-              <button type="button">Konfirmasi Bayar</button>
-              <button type="button">Batalkan</button>
-            </td>
-          </tr>
-        </tbody>
-        <tfoot>
-          <tr>
-            <td colspan="9">
-              <em>* Kasir harap mengecek bukti transfer QRIS sebelum menekan tombol "Tandai Selesai".</em>
-            </td>
-          </tr>
-        </tfoot>
-      </table>
-    </section>
-
-    <hr>
-
-    <!-- Section 3: Tabel Kontrol Stok & Ketersediaan Bahan Harian -->
-    <section id="kontrol-stok">
-      <h2>2. Kontrol Ketersediaan Menu &amp; Stok Hari Ini</h2>
-      <p>Perbarui status menu jika bahan kaldu atau topping di dapur sudah habis:</p>
-
-      <table border="1" cellpadding="8" cellspacing="0">
-        <caption><em>Tabel 2: Status Ketersediaan Menu Remen Ramen</em></caption>
-        <thead>
-          <tr>
-            <th>Kode</th>
-            <th>Nama Menu</th>
-            <th>Kategori</th>
-            <th>Harga Jual</th>
-            <th>Status Ketersediaan</th>
-            <th>Ubah Status</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>RMN-01</td>
-            <td>Tantan Ramen</td>
-            <td>Ramen Kuah</td>
-            <td>Rp 15.000</td>
-            <td><strong>TERSEDIA</strong></td>
-            <td><button type="button">Ubah ke Habis</button></td>
-          </tr>
-          <tr>
-            <td>RMN-02</td>
-            <td>Shoyu Ramen</td>
-            <td>Ramen Kuah</td>
-            <td>Rp 15.000</td>
-            <td><mark>HABIS (Sold Out)</mark></td>
-            <td><button type="button">Aktifkan Kembali</button></td>
-          </tr>
-          <tr>
-            <td>RMN-03</td>
-            <td>Abura Soba</td>
-            <td>Dry Ramen</td>
-            <td>Rp 15.000</td>
-            <td><strong>TERSEDIA</strong></td>
-            <td><button type="button">Ubah ke Habis</button></td>
-          </tr>
-          <tr>
-            <td>SNK-01</td>
-            <td>Chicken Katsu</td>
-            <td>Snack</td>
-            <td>Rp 7.000</td>
-            <td><strong>TERSEDIA</strong></td>
-            <td><button type="button">Ubah ke Habis</button></td>
-          </tr>
-          <tr>
-            <td>SNK-02</td>
-            <td>Chicken Karage</td>
-            <td>Snack</td>
-            <td>Rp 7.000</td>
-            <td><strong>TERSEDIA</strong></td>
-            <td><button type="button">Ubah ke Habis</button></td>
-          </tr>
-        </tbody>
-      </table>
-    </section>
-
-    <hr>
-
-    <!-- Section 4: Catatan Operasional Shift Kasir -->
-    <section id="memo-kasir">
-      <h2>3. Buku Catatan Shift Kasir</h2>
-      <form action="#" method="post">
-        <p>
-          <label for="catatan_shift">Catatan Pergantian Shift / Kendala Dapur:</label><br>
-          <textarea id="catatan_shift" name="catatan_shift" rows="3" cols="60" placeholder="Contoh: Stok telur ajitsuke tamago sisa 5 butir untuk shift malam..."></textarea>
-        </p>
-        <p>
-          <button type="submit">Simpan Catatan Shift</button>
-        </p>
-      </form>
-    </section>
+    <!-- TABEL 2: KONTROL STOK -->
+    <div class="table-card" id="kontrol-stok">
+      <div class="p-3 border-bottom bg-white">
+        <h2 class="h5 fw-bold mb-0 text-dark"><i class="bi bi-box-seam text-danger me-2"></i>Kontrol Ketersediaan Menu &amp; Stok Hari Ini</h2>
+      </div>
+      <div class="table-responsive">
+        <table class="table table-hover align-middle mb-0">
+          <thead class="table-light text-secondary small text-uppercase">
+            <tr>
+              <th scope="col" class="ps-3">Kode</th>
+              <th scope="col">Nama Menu</th>
+              <th scope="col">Kategori</th>
+              <th scope="col">Harga Jual</th>
+              <th scope="col" class="text-center">Status Stok</th>
+              <th scope="col" class="text-end pe-3">Ubah Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="ps-3 fw-bold">RMN-01</td>
+              <td>Tantan Ramen</td>
+              <td>Ramen Kuah</td>
+              <td>Rp 15.000</td>
+              <td class="text-center">
+                <span class="badge bg-success-subtle text-success-emphasis rounded-pill py-2 d-inline-block text-center" style="width: 105px;">TERSEDIA</span>
+              </td>
+              <td class="text-end pe-3">
+                <button type="button" class="btn btn-sm btn-outline-secondary rounded-pill" style="width: 105px;">Set Habis</button>
+              </td>
+            </tr>
+            <tr>
+              <td class="ps-3 fw-bold">RMN-02</td>
+              <td>Shoyu Ramen</td>
+              <td>Ramen Kuah</td>
+              <td>Rp 15.000</td>
+              <td class="text-center">
+                <span class="badge bg-danger-subtle text-danger-emphasis rounded-pill py-2 d-inline-block text-center" style="width: 105px;">HABIS</span>
+              </td>
+              <td class="text-end pe-3">
+                <button type="button" class="btn btn-sm btn-outline-success rounded-pill" style="width: 105px;">Aktifkan</button>
+              </td>
+            </tr>
+            <tr>
+              <td class="ps-3 fw-bold">RMN-03</td>
+              <td>Abura Soba</td>
+              <td>Dry Ramen</td>
+              <td>Rp 15.000</td>
+              <td class="text-center">
+                <span class="badge bg-success-subtle text-success-emphasis rounded-pill py-2 d-inline-block text-center" style="width: 105px;">TERSEDIA</span>
+              </td>
+              <td class="text-end pe-3">
+                <button type="button" class="btn btn-sm btn-outline-secondary rounded-pill" style="width: 105px;">Set Habis</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
 
   </main>
 
-  <hr>
-
-  <!-- ================= FOOTER ================= -->
-  <footer>
-    <p>Panel Sistem Kasir &amp; Dapur &mdash; Kedai Remen Ramen Sragen v1.0 (HTML5)</p>
-    <p><small><a href="index.html">&larr; Kembali ke Layar Pemesanan Pelanggan</a></small></p>
-  </footer>
-
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
